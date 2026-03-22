@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import { ArrowRight, Beef, Truck, Clock, Flame } from 'lucide-react';
 import ProductCard from '@/components/ProductCard';
 import { createClient } from '@/lib/supabase';
@@ -25,11 +26,48 @@ export default async function HomePage() {
           minHeight: '80vh',
           display: 'flex',
           alignItems: 'center',
-          background: 'radial-gradient(circle at top right, rgba(212, 160, 23, 0.15), transparent 40%)',
+          position: 'relative',
+          overflow: 'hidden',
           padding: '4rem 0',
         }}
       >
-        <div className="container" style={{ display: 'flex', flexDirection: 'column', gap: '2rem', maxWidth: '800px' }}>
+        {/* Background Image */}
+        <Image
+          src="/hero-bg.png"
+          alt="Mutlu Kasap"
+          fill
+          priority
+          style={{ objectFit: 'cover', objectPosition: 'center' }}
+          quality={90}
+        />
+        {/* Dark Overlay */}
+        <div style={{
+          position: 'absolute',
+          inset: 0,
+          background: 'linear-gradient(135deg, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.6) 50%, rgba(0,0,0,0.75) 100%)',
+          zIndex: 1,
+        }} />
+        {/* Gold accent glow */}
+        <div style={{
+          position: 'absolute',
+          inset: 0,
+          background: 'radial-gradient(circle at top right, rgba(212, 160, 23, 0.2), transparent 50%)',
+          zIndex: 2,
+        }} />
+
+        <div className="container" style={{ display: 'flex', flexDirection: 'column', gap: '2rem', maxWidth: '800px', position: 'relative', zIndex: 3 }}>
+          {/* Logo */}
+          <div style={{ marginBottom: '0.5rem' }}>
+            <Image
+              src="/logo.png"
+              alt="Mutlu Kasap Logo"
+              width={180}
+              height={90}
+              style={{ objectFit: 'contain', filter: 'invert(1) brightness(2)' }}
+              priority
+            />
+          </div>
+
           <div style={{ display: 'inline-block' }}>
             <span className="tag">Mutlu Kasap • Mersin</span>
           </div>

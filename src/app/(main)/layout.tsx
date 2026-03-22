@@ -6,7 +6,7 @@ export default function MainLayout({ children }: { children: React.ReactNode }) 
     <div className="page-wrapper">
       <Navbar />
       <main>{children}</main>
-      
+
       <footer style={{ borderTop: '1px solid var(--border)', padding: '4rem 2rem 2rem', marginTop: '4rem', backgroundColor: 'var(--bg-card)' }}>
         <div className="container" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '3rem', margin: '0 auto', maxWidth: '1000px' }}>
           <div>
@@ -28,9 +28,8 @@ export default function MainLayout({ children }: { children: React.ReactNode }) 
           <div>
             <h4 style={{ fontSize: '1rem', fontWeight: 700, marginBottom: '1rem' }}>İletişim</h4>
             <ul style={{ listStyle: 'none', padding: 0, display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
-              <li style={{ color: 'var(--text-secondary)', fontSize: '0.9rem' }}>Yenişehir Mahallesi No: 123<br/>Mersin</li>
-              <li style={{ color: 'var(--text-secondary)', fontSize: '0.9rem' }}>Tel: 0555 555 55 55</li>
-              <li style={{ color: 'var(--text-secondary)', fontSize: '0.9rem' }}>E-posta: bilgi@mutlukasap.com</li>
+              <li style={{ color: 'var(--text-secondary)', fontSize: '0.9rem' }}> Viranşehir, Cengiz Topel Cd. Atay Sitesi altı b blok, 33200 Mezitli/Mersin<br />Mersin/Mezitli</li>
+              <li style={{ color: 'var(--text-secondary)', fontSize: '0.9rem' }}>Tel: (0324) 359 33 27</li>
             </ul>
           </div>
         </div>
