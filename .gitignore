@@ -53,3 +53,6 @@ tsc_out.txt
 
 # admin-app (subdirectory, not part of web deploy)
 /admin-app
+
+# supabase sql files (sensitive)
+/supabase
