@@ -101,9 +101,13 @@ export default function OrderSummaryPage() {
       if (itemsError) throw itemsError;
 
       // Sipariş başarıyla verildikten sonra adminleri bilgilendir (bildirim)
+      const { data: { session } } = await supabase.auth.getSession();
       fetch('/api/notify-admin', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${session?.access_token}`,
+        },
         body: JSON.stringify({
           orderDetails: {
             id: order.id,
