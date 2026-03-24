@@ -24,6 +24,12 @@
   flex-shrink: 0;
 }
 
+.logoImg {
+  object-fit: contain;
+  height: 70px;
+  width: auto;
+}
+
 .logoAccent {
   color: var(--primary);
 }
@@ -175,8 +181,33 @@
   background: rgba(239, 68, 68, 0.1);
 }
 
-@media (max-width: 640px) {
+@media (max-width: 768px) {
+  .navbar {
+    height: 70px;
+  }
+
+  .inner {
+    gap: 0.75rem;
+  }
+
   .navLinks {
     display: none;
+  }
+
+  .actions {
+    gap: 0.5rem;
+  }
+
+  .userBtn span {
+    display: none;
+  }
+
+  .cartBtn {
+    width: 36px;
+    height: 36px;
+  }
+
+  .logoImg {
+    height: 45px;
   }
 }

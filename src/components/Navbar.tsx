@@ -101,7 +101,7 @@ export default function Navbar() {
         <div className={`container ${styles.inner}`}>
           {/* Logo */}
           <Link href="/" className={styles.logo} style={{ zIndex: 10, position: 'relative', cursor: 'pointer' }}>
-            <Image src="/logo.png" alt="Mutlu Kasap" width={280} height={90} style={{ objectFit: 'contain', height: '70px', width: 'auto' }} />
+            <Image src="/logo.png" alt="Mutlu Kasap" width={280} height={90} className={styles.logoImg} />
           </Link>
 
           {/* Nav Links */}

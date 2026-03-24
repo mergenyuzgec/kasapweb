@@ -300,3 +300,62 @@ input, textarea, select {
   transform: translateY(-2px);
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
 }
+
+@media (max-width: 768px) {
+  .page-wrapper {
+    padding-top: 76px;
+  }
+
+  .container {
+    padding: 0 1rem;
+  }
+
+  /* Buttons */
+  .btn-primary,
+  .btn-ghost,
+  .btn-secondary {
+    padding: 0.65rem 1.2rem;
+    font-size: 0.875rem;
+  }
+
+  /* Cards */
+  .card {
+    border-radius: 10px;
+  }
+
+  /* Responsive grids — single column on mobile */
+  .grid-responsive {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Hero section adjustments */
+  .hero-section {
+    min-height: 60vh !important;
+    padding: 2.5rem 0 !important;
+  }
+
+  .hero-logo {
+    max-width: 300px !important;
+  }
+
+  .hero-title {
+    font-size: 2rem !important;
+  }
+
+  /* Section margins */
+  .section-mobile {
+    margin-bottom: 2.5rem !important;
+  }
+
+  /* Social cards */
+  .social-card {
+    padding: 2rem !important;
+    border-radius: 16px !important;
+  }
+
+  /* Footer grid */
+  footer .container > div:first-child {
+    grid-template-columns: 1fr !important;
+    gap: 2rem !important;
+  }
+}

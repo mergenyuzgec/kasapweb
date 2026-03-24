@@ -55,6 +55,7 @@ export default function HomePage() {
     <div style={{ paddingBottom: '4rem' }}>
       {/* Hero Section */}
       <section
+        className="hero-section"
         style={{
           minHeight: '70vh',
           display: 'flex',
@@ -73,11 +74,12 @@ export default function HomePage() {
               width={800}
               height={400}
               priority
+              className="hero-logo"
               style={{ objectFit: 'contain', width: '100%', maxWidth: '550px', height: 'auto' }}
             />
           </div>
           
-          <h1 style={{ fontSize: 'clamp(2.5rem, 5vw, 4.5rem)', fontWeight: 900, lineHeight: 1.1, letterSpacing: '-1px' }}>
+          <h1 className="hero-title" style={{ fontSize: 'clamp(2.5rem, 5vw, 4.5rem)', fontWeight: 900, lineHeight: 1.1, letterSpacing: '-1px' }}>
             Taze ve Kaliteli Et <br />
             <span className="text-gold">Kapınıza Gelsin</span>
           </h1>
@@ -98,7 +100,7 @@ export default function HomePage() {
       </section>
 
       {/* Category Cards */}
-      <section className="container" style={{ marginTop: '-3rem', marginBottom: '4rem' }}>
+      <section className="container section-mobile" style={{ marginTop: '-3rem', marginBottom: '4rem' }}>
         <div style={{ textAlign: 'center', marginBottom: '2.5rem' }}>
           <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
             <Beef size={20} className="text-gold" />
@@ -110,7 +112,7 @@ export default function HomePage() {
           </p>
         </div>
 
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(340px, 1fr))', gap: '1.25rem' }}>
+        <div className="grid-responsive" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(340px, 1fr))', gap: '1.25rem' }}>
           {categories.map((cat) => (
             <Link
               key={cat.key}
@@ -172,8 +174,8 @@ export default function HomePage() {
       </section>
 
       {/* Social Cards — Instagram & Google */}
-      <section className="container" style={{ marginBottom: '4rem' }}>
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '1.5rem' }}>
+      <section className="container section-mobile" style={{ marginBottom: '4rem' }}>
+        <div className="grid-responsive" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '1.5rem' }}>
           
           {/* Instagram Card */}
           <a
@@ -344,8 +346,8 @@ export default function HomePage() {
       </section>
 
       {/* Features Section */}
-      <section className="container" style={{ marginBottom: '4rem' }}>
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '1.5rem' }}>
+      <section className="container section-mobile" style={{ marginBottom: '4rem' }}>
+        <div className="grid-responsive" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '1.5rem' }}>
           {[
             {
               icon: <Beef size={32} className="text-gold" />,
