@@ -56,3 +56,8 @@ tsc_out.txt
 
 # supabase sql files (sensitive)
 /supabase
+
+# sensitive scripts (contain passwords)
+create_admins.mjs
+generate_assets.mjs
+generate_custom_logo.mjs
