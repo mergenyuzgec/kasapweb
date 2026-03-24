@@ -21,7 +21,27 @@ export default function RootLayout({
   return (
     <html lang="tr">
       <body>
-        {children}
+        {/* Arka plan görseli — tüm site boyunca, opacity 0.05 */}
+        <div
+          style={{
+            position: 'fixed',
+            top: 0,
+            left: 0,
+            right: 0,
+            bottom: 0,
+            backgroundImage: 'url(/bg-texture.png)',
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            backgroundRepeat: 'no-repeat',
+            opacity: 0.05,
+            pointerEvents: 'none',
+            zIndex: 0,
+          }}
+          aria-hidden="true"
+        />
+        <div style={{ position: 'relative', zIndex: 1 }}>
+          {children}
+        </div>
         <Toaster
           position="bottom-left"
           toastOptions={{

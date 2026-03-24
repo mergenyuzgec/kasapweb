@@ -266,7 +266,7 @@ input, textarea, select {
 /* Page layout */
 .page-wrapper {
   min-height: 100vh;
-  padding-top: 72px;
+  padding-top: 96px;
 }
 
 /* Divider */
@@ -291,4 +291,12 @@ input, textarea, select {
   font-size: 0.75rem;
   font-weight: 600;
   display: inline-block;
+}
+
+/* Category Cards */
+.category-card:hover {
+  border-color: var(--border-accent) !important;
+  background: var(--bg-card-hover) !important;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
 }

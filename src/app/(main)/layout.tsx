@@ -1,5 +1,6 @@
 import Navbar from '@/components/Navbar';
 import Link from 'next/link';
+import Image from 'next/image';
 
 export default function MainLayout({ children }: { children: React.ReactNode }) {
   return (
@@ -10,9 +11,9 @@ export default function MainLayout({ children }: { children: React.ReactNode }) 
       <footer style={{ borderTop: '1px solid var(--border)', padding: '4rem 2rem 2rem', marginTop: '4rem', backgroundColor: 'var(--bg-card)' }}>
         <div className="container" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '3rem', margin: '0 auto', maxWidth: '1000px' }}>
           <div>
-            <h3 style={{ fontSize: '1.2rem', fontWeight: 800, marginBottom: '1rem', fontFamily: 'Outfit' }}>
-              Mutlu <span style={{ color: 'var(--primary)' }}>Kasap</span>
-            </h3>
+            <div style={{ marginBottom: '1rem' }}>
+              <Image src="/logo.png" alt="Mutlu Kasap" width={120} height={40} style={{ objectFit: 'contain' }} />
+            </div>
             <p style={{ color: 'var(--text-secondary)', fontSize: '0.9rem', lineHeight: 1.6 }}>
               Mersin&apos;in en taze ve güvenilir et adresi. Günlük kesim, hızlı teslimat.
             </p>
