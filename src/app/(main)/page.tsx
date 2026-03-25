@@ -144,7 +144,7 @@ export default function HomePage() {
       </section>
 
       {/* Category Cards */}
-      <section className="container section-mobile" style={{ marginTop: '-3rem', marginBottom: '4rem' }}>
+      <section className="container section-mobile" style={{ marginTop: '2rem', marginBottom: '4rem' }}>
         <div style={{ textAlign: 'center', marginBottom: '2.5rem' }}>
           <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
             <Beef size={20} className="text-gold" />
