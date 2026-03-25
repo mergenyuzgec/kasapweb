@@ -37,14 +37,14 @@ const categories = [
   {
     key: 'sarküteri',
     label: 'Şarküteri',
-    desc: 'Sucuk, pastırma, sosis ve özel şarküteri ürünleri.',
+    desc: 'Sucuk, Yoğurt, Peynir ve özel şarküteri ürünleri.',
     emoji: '🌭',
     color: '#2980b9',
   },
   {
     key: 'hazir',
     label: 'Special Hazır Ürünler',
-    desc: 'Özel marine edilmiş ve pişirmeye hazır lezzetler.',
+    desc: 'Özel hazırlanmış ve pişirmeye hazır lezzetler.',
     emoji: '🍖',
     color: '#27ae60',
   },
@@ -78,16 +78,16 @@ export default function HomePage() {
               style={{ objectFit: 'contain', width: '100%', maxWidth: '550px', height: 'auto' }}
             />
           </div>
-          
+
           <h1 className="hero-title" style={{ fontSize: 'clamp(2.5rem, 5vw, 4.5rem)', fontWeight: 900, lineHeight: 1.1, letterSpacing: '-1px' }}>
             Taze ve Kaliteli Et <br />
             <span className="text-gold">Kapınıza Gelsin</span>
           </h1>
-          
+
           <p style={{ fontSize: '1.1rem', color: 'var(--text-secondary)', lineHeight: 1.6, maxWidth: '600px' }}>
             Mersin&apos;in en iyi kasabı artık online! Özel marine edilmiş ürünlerimiz ve taze et çeşitlerimizle aynı gün kapınızdayız.
           </p>
-          
+
           <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap', justifyContent: 'center', marginTop: '1rem' }}>
             <Link href="/urunler" className="btn-primary" style={{ padding: '0.9rem 2rem', fontSize: '1rem' }}>
               <Beef size={18} /> Sipariş Ver
@@ -220,7 +220,7 @@ export default function HomePage() {
       {/* Social Cards — Instagram & Google */}
       <section className="container section-mobile" style={{ marginBottom: '4rem' }}>
         <div className="grid-responsive" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '1.5rem' }}>
-          
+
           {/* Instagram Card */}
           <a
             href="https://www.instagram.com/mutlukasap33"
@@ -273,14 +273,14 @@ export default function HomePage() {
               }}>
                 <Instagram size={32} />
               </div>
-              
+
               <h3 style={{ fontSize: '1.5rem', fontWeight: 800, marginBottom: '0.5rem' }}>
                 Bizi Takip Edin
               </h3>
               <p style={{ fontSize: '1rem', opacity: 0.9, marginBottom: '1.5rem', lineHeight: 1.5 }}>
                 Taze ürünlerimiz, özel kampanyalarımız ve mutfak ilhamları için Instagram&apos;da bizi takip edin!
               </p>
-              
+
               <div style={{
                 display: 'inline-flex',
                 alignItems: 'center',
@@ -352,14 +352,14 @@ export default function HomePage() {
               }}>
                 <Star size={32} color="#FBBC04" fill="#FBBC04" />
               </div>
-              
+
               <h3 style={{ fontSize: '1.5rem', fontWeight: 800, marginBottom: '0.5rem' }}>
                 Bizi Değerlendirin
               </h3>
               <p style={{ fontSize: '1rem', opacity: 0.85, marginBottom: '1.5rem', lineHeight: 1.5 }}>
                 Hizmetimizden memnun kaldıysanız, Google üzerinden bir değerlendirme bırakarak bize destek olun!
               </p>
-              
+
               <div style={{
                 display: 'inline-flex',
                 alignItems: 'center',
@@ -401,7 +401,7 @@ export default function HomePage() {
             {
               icon: <Clock size={32} className="text-gold" />,
               title: 'Aynı Gün Teslimat',
-              desc: 'Siparişleriniz özel soğutuculu araçlarımızla tazeliğini kaybetmeden kapınıza kadar gelir.',
+              desc: 'Siparişleriniz en kısa sürede kapınıza gelir.',
             },
             {
               icon: <Truck size={32} className="text-gold" />,
