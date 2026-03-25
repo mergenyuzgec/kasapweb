@@ -6,9 +6,10 @@ import { useCartStore } from '@/store/cart';
 import { supabase } from '@/lib/supabase';
 import toast from 'react-hot-toast';
 import AddressSelector from '@/components/AddressSelector';
-import { ArrowLeft, ArrowRight, MapPin, Plus } from 'lucide-react';
+import { ArrowLeft, ArrowRight, MapPin, Plus, AlertTriangle } from 'lucide-react';
 import Link from 'next/link';
 import { SavedAddress, Profile } from '@/types';
+import { isCartAmountValid } from '@/config/minimumCart';
 
 export default function AddressPage() {
   const router = useRouter();
@@ -74,6 +75,20 @@ export default function AddressPage() {
     setAddressValid(false);
   }, []);
 
+  // Minimum sepet tutarı kontrolü
+  const getSelectedDistrict = () => {
+    if (showNewAddressForm) return addressData.district;
+    const selected = savedAddresses.find(a => a.id === selectedAddressId);
+    return selected?.district || '';
+  };
+  const getSelectedNeighborhood = () => {
+    if (showNewAddressForm) return addressData.neighborhood;
+    const selected = savedAddresses.find(a => a.id === selectedAddressId);
+    return selected?.neighborhood || '';
+  };
+
+  const cartCheck = isCartAmountValid(getSelectedDistrict(), getSelectedNeighborhood(), getTotalPrice());
+
   const handleContinue = async () => {
     let finalAddress = null;
 
@@ -91,6 +106,13 @@ export default function AddressPage() {
     }
 
     if (!finalAddress || !contactData.full_name || !contactData.phone) return;
+
+    // Minimum sepet tutarı kontrolü
+    const check = isCartAmountValid(finalAddress.district, finalAddress.neighborhood, getTotalPrice());
+    if (!check.valid) {
+      toast.error(check.message || 'Minimum sepet tutarına ulaşılmadı');
+      return;
+    }
     
     // Save to profile if new and checked
     if (user && showNewAddressForm && saveAddressToProfile) {
@@ -261,15 +283,29 @@ export default function AddressPage() {
           </div>
         </section>
 
+        {/* Minimum Sepet Uyarısı */}
+        {(getSelectedDistrict() && getSelectedNeighborhood()) && !cartCheck.valid && (
+          <div style={{ display: 'flex', alignItems: 'flex-start', gap: '0.75rem', padding: '1rem 1.25rem', background: 'rgba(217,119,6,0.1)', border: '1px solid rgba(217,119,6,0.3)', borderRadius: '10px' }}>
+            <AlertTriangle size={20} style={{ color: '#d97706', flexShrink: 0, marginTop: '2px' }} />
+            <div>
+              <p style={{ color: '#d97706', fontWeight: 600, fontSize: '0.9rem', marginBottom: '0.25rem' }}>Minimum Sepet Tutarı</p>
+              <p style={{ color: 'var(--text-secondary)', fontSize: '0.85rem' }}>{cartCheck.message}</p>
+            </div>
+          </div>
+        )}
+
         {/* Sipariş Özeti Kısa */}
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '1.5rem', background: 'var(--bg-card-hover)', border: '1px solid var(--primary-glow)', borderRadius: '12px' }}>
           <div>
             <p style={{ color: 'var(--text-secondary)', fontSize: '0.9rem' }}>Toplam Tutar</p>
             <p style={{ fontSize: '1.4rem', fontWeight: 800, color: 'var(--primary)' }}>{getTotalPrice().toFixed(2)}₺</p>
+            {cartCheck.minAmount && cartCheck.valid && (
+              <p style={{ color: '#16a34a', fontSize: '0.8rem', marginTop: '0.25rem' }}>✓ Min. sepet tutarı karşılandı</p>
+            )}
           </div>
           <button 
             className="btn-primary" 
-            disabled={!isFormValid}
+            disabled={!isFormValid || !cartCheck.valid}
             onClick={handleContinue}
             style={{ padding: '0.8rem 2rem' }}
           >

@@ -99,6 +99,50 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* %5 İndirim Banner */}
+      <section style={{ padding: '0 1rem' }}>
+        <div className="container" style={{ maxWidth: '900px' }}>
+          <Link href="/urunler" style={{ textDecoration: 'none', display: 'block' }}>
+            <div style={{
+              background: 'linear-gradient(135deg, #1a472a 0%, #2d6a4f 50%, #40916c 100%)',
+              borderRadius: '16px',
+              padding: '1.75rem 2rem',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'space-between',
+              gap: '1.5rem',
+              border: '1px solid rgba(64, 145, 108, 0.3)',
+              boxShadow: '0 4px 24px rgba(0,0,0,0.3)',
+              cursor: 'pointer',
+              transition: 'transform 0.2s, box-shadow 0.2s',
+              marginTop: '-2rem',
+              position: 'relative',
+              zIndex: 2,
+              flexWrap: 'wrap',
+            }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', flex: 1, minWidth: '200px' }}>
+                <span style={{ fontSize: '2.5rem' }}>🎉</span>
+                <div>
+                  <p style={{ color: '#a7f3d0', fontSize: '0.8rem', fontWeight: 700, letterSpacing: '1px', marginBottom: '0.25rem' }}>
+                    KAMPANYA
+                  </p>
+                  <p style={{ color: '#fff', fontSize: '1.3rem', fontWeight: 800, lineHeight: 1.3 }}>
+                    Tüm Siparişlerde <span style={{ color: '#fbbf24', fontSize: '1.5rem' }}>%5 İNDİRİM!</span>
+                  </p>
+                  <p style={{ color: '#a7f3d0', fontSize: '0.85rem', marginTop: '0.25rem' }}>
+                    Kapıda ödeme yapıldığında uygulanır
+                  </p>
+                </div>
+              </div>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', background: 'rgba(255,255,255,0.15)', padding: '0.6rem 1.2rem', borderRadius: '10px', flexShrink: 0 }}>
+                <span style={{ color: '#fff', fontWeight: 700, fontSize: '0.9rem' }}>Hemen Sipariş Ver</span>
+                <ArrowRight size={16} style={{ color: '#fbbf24' }} />
+              </div>
+            </div>
+          </Link>
+        </div>
+      </section>
+
       {/* Category Cards */}
       <section className="container section-mobile" style={{ marginTop: '-3rem', marginBottom: '4rem' }}>
         <div style={{ textAlign: 'center', marginBottom: '2.5rem' }}>

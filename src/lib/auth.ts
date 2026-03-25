@@ -1,52 +1,48 @@
 import { supabase } from './supabase';
 
-// SMS OTP aktif/pasif ayarı — API hazır olunca true yapılacak
-export const OTP_ENABLED = false;
+// SMS OTP aktif/pasif ayarı
+export const OTP_ENABLED = true;
 
 /**
- * Telefon numarasına SMS OTP kodu gönderir.
- * API henüz hazır olmadığı için şu an sadece placeholder.
+ * Telefon numarasına SMS OTP kodu gönderir (NETGSM API).
  */
 export async function sendOtp(phone: string): Promise<{ success: boolean; error?: string }> {
   if (!OTP_ENABLED) {
-    // OTP devre dışı — her zaman başarılı döner
     return { success: true };
   }
 
-  // TODO: SMS API entegrasyonu yapılacak
-  // Örnek:
-  // const response = await fetch('/api/sms/send-otp', {
-  //   method: 'POST',
-  //   headers: { 'Content-Type': 'application/json' },
-  //   body: JSON.stringify({ phone }),
-  // });
-  // const data = await response.json();
-  // return { success: data.success, error: data.error };
-
-  return { success: false, error: 'SMS API henüz entegre edilmedi' };
+  try {
+    const response = await fetch('/api/sms/send-otp', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ phone }),
+    });
+    const data = await response.json();
+    return { success: data.success, error: data.error };
+  } catch {
+    return { success: false, error: 'SMS gönderilemedi. Tekrar deneyin.' };
+  }
 }
 
 /**
  * Kullanıcının girdiği OTP kodunu doğrular.
- * API henüz hazır olmadığı için şu an sadece placeholder.
  */
 export async function verifyOtp(phone: string, code: string): Promise<{ success: boolean; error?: string }> {
   if (!OTP_ENABLED) {
-    // OTP devre dışı — her zaman başarılı döner
     return { success: true };
   }
 
-  // TODO: SMS API entegrasyonu yapılacak
-  // Örnek:
-  // const response = await fetch('/api/sms/verify-otp', {
-  //   method: 'POST',
-  //   headers: { 'Content-Type': 'application/json' },
-  //   body: JSON.stringify({ phone, code }),
-  // });
-  // const data = await response.json();
-  // return { success: data.success, error: data.error };
-
-  return { success: false, error: 'SMS API henüz entegre edilmedi' };
+  try {
+    const response = await fetch('/api/sms/verify-otp', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ phone, code }),
+    });
+    const data = await response.json();
+    return { success: data.success, error: data.error };
+  } catch {
+    return { success: false, error: 'Doğrulama başarısız. Tekrar deneyin.' };
+  }
 }
 
 export async function signUp(email: string, password: string, fullName: string, phone: string = '') {
