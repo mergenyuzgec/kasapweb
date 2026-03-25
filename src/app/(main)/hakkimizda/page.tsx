@@ -3,7 +3,7 @@ import { Beef, CheckCircle2, Truck, ShieldCheck, MapPin } from 'lucide-react';
 export default function AboutPage() {
   return (
     <div className="container" style={{ padding: '4rem 0', maxWidth: '800px' }}>
-      
+
       {/* Hero Section */}
       <div style={{ textAlign: 'center', marginBottom: '4rem' }}>
         <div style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '80px', height: '80px', borderRadius: '50%', background: 'rgba(212, 160, 23, 0.1)', color: 'var(--primary)', marginBottom: '1.5rem' }}>
@@ -43,7 +43,7 @@ export default function AboutPage() {
         <div className="card" style={{ padding: '2rem', textAlign: 'center' }}>
           <Truck size={36} className="text-gold" style={{ margin: '0 auto 1rem' }} />
           <h3 style={{ fontSize: '1.2rem', fontWeight: 700, marginBottom: '0.5rem' }}>Hızlı Teslimat</h3>
-          <p style={{ color: 'var(--text-secondary)', fontSize: '0.9rem', lineHeight: 1.5 }}>Soğuk zincir kırılmadan, özel araçlarımızla siparişlerinizi kapınıza getiriyoruz.</p>
+          <p style={{ color: 'var(--text-secondary)', fontSize: '0.9rem', lineHeight: 1.5 }}>Siparişleriniz en kısa sürede kapınıza gelir.</p>
         </div>
       </div>
 
@@ -57,15 +57,15 @@ export default function AboutPage() {
         <p style={{ color: 'var(--text-secondary)', fontSize: '1.05rem', marginBottom: '1.5rem' }}>
           Mersin
         </p>
-        
+
         <div style={{ width: '100%', height: '300px', borderRadius: '12px', overflow: 'hidden', marginBottom: '2rem', border: '1px solid var(--border)' }}>
-          <iframe 
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3196.8!2d34.5397063!3d36.7507504!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x15278bfd9ae64963%3A0x33924702fd7b79b3!2smutlu%20kasap!5e0!3m2!1str!2str!4v1700000000000!5m2!1str!2str" 
-            width="100%" 
-            height="100%" 
-            style={{ border: 0 }} 
-            allowFullScreen={false} 
-            loading="lazy" 
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3196.8!2d34.5397063!3d36.7507504!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x15278bfd9ae64963%3A0x33924702fd7b79b3!2smutlu%20kasap!5e0!3m2!1str!2str!4v1700000000000!5m2!1str!2str"
+            width="100%"
+            height="100%"
+            style={{ border: 0 }}
+            allowFullScreen={false}
+            loading="lazy"
             referrerPolicy="no-referrer-when-downgrade"
           ></iframe>
         </div>
